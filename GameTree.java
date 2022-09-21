@@ -4,12 +4,7 @@ import java.util.ArrayList;
 
 /**
  * A GameTree is a tree of HexBoard positions.
- * 
- * The children of a position are all of the positions that could
- * result from possible moves from that position.  Knowing what
- * positions are possible can enable us to choose the best.
- * 
- * @author Sophia Ristuben, Liz Johnson
+ * @author Sophia Ristuben
  */
 public class GameTree {	
 	public GameTree parent;
@@ -19,9 +14,9 @@ public class GameTree {
 	public HexMove m;
 	
 	/**
-	 * primary constructor (for new GameTree)
+	 *  constructor (for new GameTree)
 	 * 
-	 * @param board with which this tree starts
+	 * @param tree starting board
 	 * @param color of the player who gets next move
 	 */
 	public GameTree(HexBoard board, char color) {
@@ -31,7 +26,7 @@ public class GameTree {
 	/**
 	 * alternative constructor (for moves and positions)
 	 * 
-	 * Generate a GameTree that generates all possible moves originating from this position,
+	 * GameTree that generates all possible moves originating from this position,
 	 * given whose turn it is.
 	 * 
 	 * @param board	for this position
