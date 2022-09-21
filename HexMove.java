@@ -2,7 +2,7 @@ package hexAPawn;
 
 
 // A class for representing a HexAPawn move
-// (c) duane a. bailey
+
 
 public class HexMove {
 	protected int from;
