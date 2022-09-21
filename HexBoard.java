@@ -12,60 +12,7 @@ import java.util.Scanner;
 
 /**
  * This class represents the start of the HexAPawn board.
- * Note that there is a constructor that creates a board
- * given an original board configuration and a HexMove.  This
- * will be handy while building the game tree.
- *
- * The public methods in this class are sufficient to 
- * complete the assignment- you should not need to change
- * or add to the class in any way.
- *
- * Here is an example of how to use the features of the HexBoard:
- * <PRE>
- *   public static void main(String[] args) {
- *       HexBoard b = new HexBoard(3,3); // change me!
- *       ArrayList<HexMove> moves;
- *       ReadStream r = new ReadStream();
- *       int yourMove;
- *       int myMove;
- *       Random gen = new Random();
- *       System.out.println(b);
- *
- *       do {
- *           // white to play (human): print moves
- *           moves = b.moves(WHITE);
- *           Iterator i = moves.iterator();
- *           int j = 0;
- *           while (i.hasNext()) {
- *                System.out.println(j+". "+i.next());
- *                j++;
- *           }
- *           // read move from keyboard
- *           yourMove = r.readInt();
- *
- *           // construct a new board, based on move
- *           b = new HexBoard(b,(HexMove)moves.elementAt(yourMove));
- *           System.out.println(b);
- *
- *           // if WHITE won, claim the victory and leave.
- *           if (b.win(WHITE)) { System.out.println("You win!"); break; }
- *
- *           // black's move (compute): move randomly, but legally
- *           // get moves
- *           moves = b.moves(BLACK);
- *           // pick one
- *           myMove = Math.abs(gen.nextInt()) % moves.size();
- *           // construct new board
- *           b = new HexBoard(b,(HexMove)moves.elementAt(myMove));
- *           System.out.println("I "+moves.elementAt(myMove));
- *           System.out.println(b);
- *           // claim victory, if true
- *           if (b.win(BLACK)) { System.out.println("I win!"); break; }
- *       } while (true);
- *   }
- * </PRE>
- *
- *
+ * 
  */
 
 public class HexBoard {
@@ -78,15 +25,16 @@ public class HexBoard {
 
 	/**
 	 * Creates a standard 3x3 board, with white pieces in row 1 and black pieces
-	 * in row 3. @post constructs a standard hexapawn board
+	 * in row 3. 
 	 */
 	public HexBoard() {
 		this(3, 3);
 	}
 
 	/**
-	 * Creates a board with the given number of rows and columns. @pre r, c >= 3
-	 * (shape of board) @post constructs a hexapawn board, white on top, black
+	 * Creates a board with the given number of rows and columns.
+	 * (
+	 constructs a hexapawn board, white on top, black
 	 * on bottom
 	 */
 	public HexBoard(int r, int c) {
